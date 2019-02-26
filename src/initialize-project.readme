@@ -1,0 +1,8 @@
+Per inizializzare un progetto con angular material:
+1 - Creare il progetto con ng new app-name (a livello di root, cioé Projects nel mio caso)
+2 - Dentro la cartella si trova node_modules e il package.json (è qui che va .git)
+3 - npm install --save @angular/material @angular/cdk @angular/animations
+4 - importare BrowserAnimationsModule nll'app.ts
+5 - Aggiungere un theme a styles.css. I fogli di stile sono caricati insieme ad angular material sotto la cartella node_modules
+------------------------------------------------------------------
+In angular material ogni elemento html ha un suo component. Ad esempio la checkbox, l'input ecc: ognuno ha il suo component da importare
