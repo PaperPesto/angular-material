@@ -4,5 +4,7 @@ Per inizializzare un progetto con angular material:
 3 - npm install --save @angular/material @angular/cdk @angular/animations
 4 - importare BrowserAnimationsModule nll'app.ts
 5 - Aggiungere un theme a styles.css. I fogli di stile sono caricati insieme ad angular material sotto la cartella node_modules
+ 6 - Installare hammerjs (server per il mobile)
 ------------------------------------------------------------------
 In angular material ogni elemento html ha un suo component. Ad esempio la checkbox, l'input ecc: ognuno ha il suo component da importare
+Angular Material è su github
