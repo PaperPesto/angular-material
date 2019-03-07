@@ -1,5 +1,5 @@
 // Deve gestire gli esercizi che facciamo, quelli già fatti ecc...
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { Exercise } from './exercise.model';
 
 export class TrainingService {
