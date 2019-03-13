@@ -39,7 +39,7 @@ export class TrainingService {
 
     startExercise(selectedId: string) {
         this.runningExercise = this.availableExercises.find(
-            ex => ex.id === selectedId
+            ex => ex.name === selectedId
         );
         this.exerciseChange.next({ ...this.runningExercise });
     }
