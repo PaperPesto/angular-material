@@ -32,7 +32,7 @@ export class NewTrainingComponent implements OnInit {
             // duration: doc.payload.doc.data().duration,
             // calories: doc.payload.doc.data().calories
             ...doc.payload.doc.data()
-          } as Exercise;
+          } as Exercise;  // trovata soluzione in Q&A
         });
       }));
       // .subscribe(result => {
