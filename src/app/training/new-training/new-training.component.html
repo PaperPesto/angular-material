@@ -6,7 +6,7 @@
         <mat-form-field>
           <mat-select placeholder="Choose Exercise" ngModel name="exercise" required>
             <!-- qui sotto faccio un async su un observable (exercises) lato client -->
-            <mat-option *ngFor="let exercise of exercises | async" [value]="exercise.name">
+            <mat-option *ngFor="let exercise of exercises" [value]="exercise.name">
               {{exercise.name}}
             </mat-option>
           </mat-select>
