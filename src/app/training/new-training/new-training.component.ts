@@ -1,21 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TrainingService } from '../training.service';
 import { Exercise } from '../exercise.model';
 import { NgForm } from '@angular/forms';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-new-training',
   templateUrl: './new-training.component.html',
   styleUrls: ['./new-training.component.css']
 })
-export class NewTrainingComponent implements OnInit {
-  exercises: Exercise[] = [];
-  // Le classi iniettate tramite DI le inserisco qui nel costruttore
-  // NB che per poterle usare, il motore di DI deve anche avere specificato il tipo di classe
+export class NewTrainingComponent implements OnInit, OnDestroy {
+  ngOnDestroy() {
+    this.exerciseSubscription.unsubscribe();
+  }
+  exercises: Exercise[];
+  exerciseSubscription: Subscription;
+
   constructor(private trainingService: TrainingService) { }
 
   ngOnInit() {
-    this.exercises = this.trainingService.getAvailableExercises();
+    this.exerciseSubscription = this.trainingService.exercisesChanged.subscribe(
+      exercises => this.exercises = exercises
+      );
+    this.trainingService.fetchAvailableExercises();
   }
 
   onStartTraining(form: NgForm) {
